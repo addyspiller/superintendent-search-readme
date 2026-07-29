@@ -6,7 +6,7 @@ When our building super announced he was leaving, I realized the hiring process 
 
 So I built a tool that enforces the process. Upload a resume, and Claude reads it against our building's actual specs: 110 units, commercial tenants sharing basement access, a boiler from another era. The AI flags relevant experience and gaps before we even pick up the phone. Then the interview framework walks through four scoring areas—building systems, operations, live-in fit, comparable property background—with the same questions every time. References get tracked with outcomes. Offers get logged with dates. One candidate gets marked hired.
 
-The whole thing lives behind a login, and the only user is me. But what it produces—a defensible, consistent record of how we evaluated each candidate—is something the full board can review.
+The whole thing lives behind a login, to protect PII. But what it produces—a defensible, consistent record of how we evaluated each candidate—is something the full board can review.
 
 ***
 
@@ -26,4 +26,4 @@ The dashboard shows every candidate side by side: average interview scores, reco
 
 ## Status
 
-Private. In active use for an ongoing superintendent search at 215 West 75th Street.
+Private. In active use for an ongoing superintendent search.
