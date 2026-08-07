@@ -1,29 +1,45 @@
-# 215 Super Search
+# Superintendent Evaluation Tool
 
-A board president shouldn't need a spreadsheet and a prayer to hire a superintendent.
+A more consistent, defensible way for a co-op board to evaluate superintendent candidates.
 
-When our building super announced he was leaving, I realized the hiring process ahead of us was going to be messy. We'd be evaluating three to five candidates against the same criteria—32BJ union membership, HPD certification, live-in commitment, experience with pre-war steam systems—but there was no consistent way to document interviews, track references, or compare candidates side by side. The kind of thing that ends with someone saying "I thought *you* called his references."
+## The problem
 
-So I built a tool that enforces the process. Upload a resume, and Claude reads it against our building's actual specs: 110 units, commercial tenants sharing basement access, a boiler from another era. The AI flags relevant experience and gaps before we even pick up the phone. Then the interview framework walks through four scoring areas—building systems, operations, live-in fit, comparable property background—with the same questions every time. References get tracked with outcomes. Offers get logged with dates. One candidate gets marked hired.
+I built this while my co-op board was hiring a new building superintendent.
 
-The whole thing lives behind a login, to protect PII. But what it produces—a defensible, consistent record of how we evaluated each candidate—is something the full board can review.
+Historically, candidates had been evaluated somewhat differently depending on who interviewed them and when. Information lived across resumes, conversations, reference calls, and people's memories, making it difficult to compare candidates consistently or go back later and understand why someone had advanced or been rejected.
 
-***
+The challenge wasn't simply organizing candidate information. It was creating a better decision process.
 
-## What it does
+## Product decisions
 
-The app handles the full lifecycle of superintendent hiring for a single building. A PDF resume goes in; Claude extracts the candidate's profile and scores it against building-specific criteria (pre-war systems, NYC compliance filings, staff supervision, commercial tenant coordination). From there, the candidate moves through hard requirement checks, a structured interview with four scored competency areas, reference tracking with outcomes, in-person session logging, and offer management.
+I designed the workflow around a few principles:
 
-The dashboard shows every candidate side by side: average interview scores, recommendation status, reference summaries, offer progress. It's designed for a board president who needs to defend a hiring decision to a committee—not remember it.
+- **Filter hard requirements first.** Candidates who don't meet non-negotiable requirements shouldn't consume the board's interview time.
+- **Evaluate everyone against the same criteria.** Resumes and interviews use a consistent, building-specific framework rather than shifting standards from candidate to candidate.
+- **Use AI to support judgment, not replace it.** AI surfaces relevant experience and potential gaps, but the board makes the hiring decision.
+- **Keep the decision trail together.** Resume evaluation, interview notes, references, scoring, and offers live in one place so the board doesn't have to reconstruct what happened later.
+- **Design for the actual building.** Evaluation criteria reflect the realities of the property, from pre-war building systems and NYC compliance to staff supervision and commercial tenant coordination.
 
-***
+## What I built
 
-## Stack
+The application supports the full superintendent hiring process:
 
-`React` · `Vite` · `Firebase Auth` · `Firestore` · `Netlify Functions` · `Claude API`
+1. Upload a candidate resume
+2. Evaluate hard requirements and building-specific experience
+3. Conduct structured interviews using a common rubric
+4. Track references and outcomes
+5. Record in-person sessions and notes
+6. Compare candidates side by side
+7. Track offers and the final hiring decision
 
-***
+Candidate information sits behind authentication to protect PII.
 
-## Status
+## What happened
 
-Private. In active use for an ongoing superintendent search.
+The board used the tool throughout the superintendent search, creating a much more structured evaluation process than we had used previously.
+
+It also surfaced a broader use case: our property manager saw enough value in the approach that she wanted to use it for superintendent searches at other buildings she manages.
+
+## Built with
+
+React · Vite · Firebase · Claude API
